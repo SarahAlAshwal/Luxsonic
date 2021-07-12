@@ -1,14 +1,5 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 100vmin;
-  pointer-events: none;
-}
-
-
-.App-header {
   background-color: white;
   min-height: 100vh;
   display: flex;
@@ -16,8 +7,17 @@
   align-items: center;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: #117bac
-  ;
+  color: #117bac;
+}
+
+.App-logo {
+  height: 100vmin;
+  pointer-events: none;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
 }
 
 
