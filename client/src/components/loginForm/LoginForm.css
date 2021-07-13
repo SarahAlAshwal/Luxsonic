@@ -1,0 +1,28 @@
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.login-input {
+  margin: 5px;
+}
+
+input::placeholder {
+  font-size: medium;
+  color: #117bac;
+  font-style: italic;
+  
+}
+
+input:focus {
+  border-color: #117bac;
+  outline: #117bac
+}
+
+#login-button {
+  background-color: #f28e37;
+  color: white;
+  border-radius: 16px;
+  border: 1px #f28e37;
+}
