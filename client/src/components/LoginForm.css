@@ -1,19 +1,19 @@
-#login-form {
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
 }
 
-.login-input {
+.form-input {
   margin: 5px;
   width: 50%;
   height: 30px;
+  color: #117bac;
 }
 
 input::placeholder {
   font-size: medium;
-  color: #117bac;
   font-style: italic;
   
 }
@@ -23,7 +23,7 @@ input:focus {
   outline: #117bac
 }
 
-#login-button {
+.form-button {
   background-color: #f28e37;
   color: white;
   border-radius: 16px;

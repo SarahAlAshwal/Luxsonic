@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './LoginForm.css';
+import '../LoginForm.css';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -12,10 +12,10 @@ function LoginForm() {
     console.log(username,password)
   }
   return (
-    <form id='login-form' onSubmit={handleSubmit}>
-      <input placeholder='Username' type='text' className='login-input' onChange={handleUsername}></input>
-      <input placeholder='Password' type='password' className='login-input' onChange={handlePassword}></input>
-      <button id='login-button'>Sign In</button>
+    <form className='form-container' onSubmit={handleSubmit}>
+      <input placeholder='Username' type='text' className='form-input' onChange={handleUsername}></input>
+      <input placeholder='Password' type='password' className='form-input' onChange={handlePassword}></input>
+      <button className='form-button'>Sign In</button>
     </form>
   )};
 
