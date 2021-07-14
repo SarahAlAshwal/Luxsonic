@@ -30,7 +30,7 @@ function DashboardForm () {
     <form className='form-container' onSubmit={handleSubmit}>
       <input placeholder='First Name' type='text' className='form-input' onChange={handleFirstName}></input>
       <input placeholder='Last Name' type='text' className='form-input' onChange={handleLastName}></input>
-      <input placeholder='UID' type='number' className='form-input' onChange={handleUID}></input>
+      <input placeholder='UID' type='text' className='form-input' onChange={handleUID}></input>
       <input placeholder='Date of Record' type='Date' className='form-input' onChange={handleDate}></input>
       <input placeholder='Profission' type='text' className='form-input' onChange={handleProfission}></input>
       <button className='form-button'>Submit</button>
