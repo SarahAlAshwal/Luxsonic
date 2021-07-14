@@ -6,10 +6,11 @@ CREATE TABLE users (
   password CHAR(255)
 );
 
-CREATE TABLE form (
+CREATE TABLE forms (
   form_id SERIAL PRIMARY KEY,
   firstName CHAR(255),
   lastName CHAR(255),
   form_uid uuid,
-  form_date date 
+  form_date date,
+  profission CHAR(255) 
 );

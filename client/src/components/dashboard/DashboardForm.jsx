@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../LoginForm.css';
+import axios from 'axios';
 
 function DashboardForm () {
   const [formInput, setFormInput] = useState({
@@ -16,9 +17,13 @@ function DashboardForm () {
   const handleDate = (event) => setFormInput({ ...formInput, date: event.target.value });
   const handleProfission = (event) => setFormInput({ ...formInput, profission: event.target.value });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formInput)
+    axios.post('/dashboard', {
+      formInput
+    })
+    .then((response) => console.log(response))
+    .catch(error => console.log(error))
   }
 
   return (
