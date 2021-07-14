@@ -8,6 +8,4 @@ const pool = require('./db');
 app.use(cors());
 app.use(express.json());
 
-//const test = pool.query(`INSERT INTO users (username, password) VALUES ('User1', 'test');`);
-
 app.listen(port, () => console.log(`server listen on port ${port}`));
