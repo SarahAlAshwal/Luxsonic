@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import '../LoginForm.css';
 
@@ -9,7 +10,12 @@ function LoginForm() {
   const handlePassword = (event) => setPassword(event.target.value);
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(username,password)
+    axios.post('/user', {
+      username: username,
+      password: password
+    })
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error))
   }
   return (
     <form className='form-container' onSubmit={handleSubmit}>

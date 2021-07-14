@@ -2,7 +2,7 @@ import './App.css';
 import LanderPage from './components/landerPage/LanderPage';
 import Dashboard from './components/dashboard/Dashboard';
 
-const show = true;
+const show = false;
 function App() {
   return (
     <div className="App">

@@ -19,7 +19,8 @@ function DashboardForm () {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.post('/dashboard', {
+    console.log(formInput)
+    axios.post('http://localhost:5000/dashboard', {
       formInput
     })
     .then((response) => console.log(response))
