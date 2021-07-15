@@ -1,5 +1,5 @@
 
-import logo from '../../luxsonicHero.jpg';
+import hero from '../../luxsonicHero.jpg';
 import LoginForm from '../loginForm/LoginForm';
 import './LanderPage.css'; 
 
@@ -13,7 +13,7 @@ function LanderPage (props) {
         </div>
         <LoginForm login ={props.login} error={props.error}/>
       </div>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={hero} className="App-hero" alt="hero" />
     </>
   );
 }
