@@ -14,3 +14,5 @@ CREATE TABLE forms (
   form_date date,
   profission CHAR(255) 
 );
+
+SELECT * FROM users WHERE username = 'user1' AND password = '123';
