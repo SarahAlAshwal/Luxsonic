@@ -17,6 +17,31 @@ function Dashboard (props) {
     })
     .catch(error => console.log(error))
   };
+  
+  const saveRecords = async() => {
+    axios.get('http://localhost:5000/dashboard')
+    .then( response => {
+      const csvData = response.data.map(record => {
+        const temp = [];
+        temp.push(record.firstname);
+        temp.push(record.lastname);
+        temp.push(record.form_uid);
+        temp.push(record.form_date);
+        temp.push(record.profission);
+        return temp;
+      });
+      const element= document.createElement('a');
+      const file = new Blob([csvData], {
+        type:  "data:text/csv;charset=utf-8,"
+      });
+      element.href = URL.createObjectURL(file);
+      element.download = 'Records.csv';
+      document.body.appendChild(element);
+      element.click();
+    })
+    .catch(error => console.log(error))
+  };
+
   const recordsFields = records.map(record => 
     <Record
       key={record.form_id} 
@@ -28,7 +53,7 @@ function Dashboard (props) {
     )
   return (
     <>
-      <Header display={display} hide={() => setShowRecords(false)} />
+      <Header display={display} hide={() => setShowRecords(false)} save={saveRecords} />
       <div id='dashboard-container'>
         <h2>{`Welcome ${props.name}`}</h2>
         <DashboardForm/>
