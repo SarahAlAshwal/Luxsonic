@@ -1,0 +1,9 @@
+.record-container {
+  display: grid;
+  grid-template-columns: 10% 20% 30% 30% 10%;
+}
+
+span {
+  margin: 1rem;
+  font-size: 1rem;
+}

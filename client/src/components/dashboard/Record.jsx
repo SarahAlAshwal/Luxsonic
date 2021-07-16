@@ -1,6 +1,8 @@
-function Records (props) {
+import './Record.css';
+
+function Record (props) {
   return (
-    <div>
+    <div className='record-container'>
       <span>{props.firstName}</span>
       <span>{props.lastName}</span>
       <span>{props.uid}</span>
@@ -10,4 +12,4 @@ function Records (props) {
   )
 }
 
-export default Records;
+export default Record;

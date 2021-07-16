@@ -32,3 +32,20 @@ margin-right: 1rem;
   cursor: pointer;
   outline: none;
 }
+
+.table-header {
+  display: grid;
+  grid-template-columns: 10% 20% 30% 30% 10%;
+  background-color: #117bac;
+}
+
+.header{
+color: white;
+font-size: 1.1rem;
+font-weight: bold;
+}
+
+#display-records-container {
+  margin: 1rem;
+  border: 1px solid #117bac;
+}
