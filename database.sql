@@ -16,6 +16,3 @@ CREATE TABLE forms (
   profission CHAR(255),
   user_id integer REFERENCES users (user_id)
 );
-
-INSERT INTO users (username, email, password) VALUES ('user2', 'user2@gmail.com', '456');
-SELECT * FROM users WHERE username = 'user1' AND password = '123';
