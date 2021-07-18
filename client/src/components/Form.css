@@ -34,6 +34,15 @@ input:focus {
   cursor: pointer;
 }
 
+.register-button {
+  background-color: white;
+  color: #f28e37;
+  border: none;
+  width: 30%;
+  height: 30px;
+  cursor: pointer;
+}
+
 .error {
   color: red;
   font-size: 12px;

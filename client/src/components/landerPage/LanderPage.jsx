@@ -11,7 +11,7 @@ function LanderPage (props) {
           <h1>LUXSONIC</h1>
           <h6>Empowering the healthcare industry with immersive solutions</h6>
         </div>
-        <LoginForm login ={props.login} error={props.error}/>
+        <LoginForm register={props.register} login ={props.login} error={props.error}/>
       </div>
       <img src={hero} className="App-hero" alt="hero" />
     </>
