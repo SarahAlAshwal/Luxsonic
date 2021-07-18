@@ -16,19 +16,20 @@ function App() {
     })
     .then((response) => {
       response.data ? setShow(true) : setError('Incorrect email or password ');
-      setUser(response.data.email);
+      setUser(response.data.username);
     })
     .catch((error) => console.log(error))
   }  
 
-  function handleRegister (email, password, username) {
+  function handleRegister (username, email, password) {
     axios.post('http://localhost:5000/user/register', {
       username: username,
       email: email,
       password: password
     })
     .then((response) => {
-      setUser(response.data.email);
+      setShow(true);
+      setUser(response.data.name);
     })
     .catch((error) => console.log(error))
   }  

@@ -6,8 +6,8 @@ const jwtGenerator = require('../utils/jwtGenerator');
 const authorize = require('../middleware/authorize');
 
 router.post('/register', async (req, res) => {
-  const { email, name, password } = req.body;
-
+  const { username, email, password } = req.body;
+  console.log(req.body);
   try {
     const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
 
@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
 
     let newUser = await pool.query(
       "INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *",
-      [name, email, bcryptPassword]
+      [username, email, bcryptPassword]
     );
 
     const jwtToken = jwtGenerator(newUser.rows[0].user_id);
