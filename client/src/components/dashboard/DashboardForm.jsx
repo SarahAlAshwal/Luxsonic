@@ -19,9 +19,10 @@ function DashboardForm () {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.post('/dashboard', {
-      formInput
-    })
+    axios.post('http://localhost:5000/dashboard', 
+      formInput,
+      { headers: { jwt_token: localStorage.token }}
+    )
     .then((response) => console.log(response))
     .catch(error => console.log(error))
   }

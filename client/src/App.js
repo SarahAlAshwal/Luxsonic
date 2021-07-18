@@ -8,6 +8,7 @@ function App() {
   const [show, setShow] = useState(false);
   const[error, setError] = useState('');
   const [user, setUser] = useState('');
+  const [auth, setAuth] = useState(false);
 
   function handleLogin (email, password) {
     axios.post('http://localhost:5000/user/login', {
@@ -16,7 +17,11 @@ function App() {
     })
     .then((response) => {
       response.data ? setShow(true) : setError('Incorrect email or password ');
-      setUser(response.data.username);
+      //setUser(response.data.username);
+      if(response.data.jwtToken) {
+        localStorage.setItem('token', response.data.jwtToken);
+        setAuth(true);
+      }
     })
     .catch((error) => console.log(error))
   }  
@@ -30,6 +35,10 @@ function App() {
     .then((response) => {
       setShow(true);
       setUser(response.data.name);
+      if(response.data.jwtToken) {
+        localStorage.setItem('token', response.data.jwtToken);
+        setAuth(true);
+      }
     })
     .catch((error) => console.log(error))
   }  
