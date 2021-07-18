@@ -28,7 +28,6 @@ function DashboardForm () {
   }
 
   return (
-    <div>
       <form className='form-container' onSubmit={handleSubmit}>
         <input placeholder='First Name' type='text' className='form-input' onChange={handleFirstName}></input>
         <input placeholder='Last Name' type='text' className='form-input' onChange={handleLastName}></input>
@@ -37,7 +36,6 @@ function DashboardForm () {
         <input placeholder='Profission' type='text' className='form-input' onChange={handleProfission}></input>
         <button className='form-button'>Submit</button>
       </form>
-    </div>
   );
 }
 
