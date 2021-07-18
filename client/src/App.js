@@ -9,14 +9,14 @@ function App() {
   const[error, setError] = useState('');
   const [user, setUser] = useState('');
 
-  function handleLogin (username, password) {
-    axios.post('/user', {
-      username: username,
+  function handleLogin (email, password) {
+    axios.post('http://localhost:5000/user/login', {
+      email: email,
       password: password
     })
     .then((response) => {
-      response.data ? setShow(true) : setError('Incorrect username or password ');
-      setUser(response.data.username);
+      response.data ? setShow(true) : setError('Incorrect email or password ');
+      setUser(response.data.email);
     })
     .catch((error) => console.log(error))
   }  

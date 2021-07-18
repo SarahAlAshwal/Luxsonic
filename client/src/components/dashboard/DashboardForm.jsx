@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../LoginForm.css';
+import '../Form.css';
 import axios from 'axios';
 
 function DashboardForm () {
