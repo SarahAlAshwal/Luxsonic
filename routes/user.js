@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const pool = require("../db");
-const jwtGenerator = require("../utils/jwtGenerator");
-const authorize = require("../middleware/authorize");
+const jwtGenerator = require('../utils/jwtGenerator');
+const authorize = require('../middleware/authorize');
 
 router.post("/register", async (req, res) => {
   const { email, name, password } = req.body;
@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password } = req.body;
 
   try {
