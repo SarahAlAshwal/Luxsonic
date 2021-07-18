@@ -10,7 +10,7 @@ function Dashboard (props) {
   const [showRecords, setShowRecords] = useState(false);
 
   const display = async() => {
-    axios.get('http://localhost:5000/dashboard')
+    axios.get('/dashboard')
     .then( response => {
     setRecords(response.data);
     setShowRecords(true);
@@ -19,7 +19,7 @@ function Dashboard (props) {
   };
   
   const saveRecords = async() => {
-    axios.get('http://localhost:5000/dashboard')
+    axios.get('/dashboard')
     .then( response => {
       const csvData = response.data.map(record => {
         const temp = [];

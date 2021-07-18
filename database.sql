@@ -12,7 +12,8 @@ CREATE TABLE forms (
   lastName CHAR(255),
   form_uid uuid,
   form_date date,
-  profission CHAR(255) 
+  profission CHAR(255),
+  user_id integer REFERENCES users (user_id)
 );
 
 SELECT * FROM users WHERE username = 'user1' AND password = '123';

@@ -10,7 +10,7 @@ function App() {
   const [user, setUser] = useState('');
 
   function handleLogin (username, password) {
-    axios.post('http://localhost:5000/user', {
+    axios.post('/user', {
       username: username,
       password: password
     })
