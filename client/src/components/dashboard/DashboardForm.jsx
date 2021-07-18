@@ -3,13 +3,14 @@ import '../Form.css';
 import axios from 'axios';
 
 function DashboardForm () {
-  const [formInput, setFormInput] = useState({
+  const intialForm = {
     firstName: '',
     lastName: '',
     uid: '',
     date: '',
     profission: ''
-  });
+  }
+  const [formInput, setFormInput] = useState(intialForm);
 
   const handleFirstName = (event) => setFormInput({ ...formInput, firstName: event.target.value });
   const handleLastName = (event) => setFormInput({ ...formInput, lastName: event.target.value });
@@ -23,7 +24,7 @@ function DashboardForm () {
       formInput,
       { headers: { jwt_token: localStorage.token }}
     )
-    .then((response) => console.log(response))
+    .then(() => console.log('response'))
     .catch(error => console.log(error))
   }
 

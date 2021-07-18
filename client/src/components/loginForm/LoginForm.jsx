@@ -6,6 +6,7 @@ function LoginForm(props) {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [register, setRegister] = useState(false);
+  const[error, setError] = useState('');
 
   const handleEmail = (event) => setEmail(event.target.value);
   const handlePassword = (event) => setPassword(event.target.value);
@@ -13,7 +14,10 @@ function LoginForm(props) {
   const buttonText = register ? 'Sign up': 'Sign In';
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    props.login(email, password);
+    password === '' || email === '' ? setError('Email and Password are required'): setError('');
+    if (!error) {
+      props.login(email, password);
+    }
   }
   const handleSubmitRegister = (event) => {
     event.preventDefault();
@@ -27,7 +31,7 @@ function LoginForm(props) {
       <input placeholder='Password' type='password' className='form-input' onChange={handlePassword}></input>
       <button className='form-button'>{buttonText}</button>
     </form>
-    {props.error !== '' && <p className='error'>{props.error}</p>}
+    {error !== '' && <p className='error'>{error}</p>}
     <button className='register-button' onClick={() => setRegister(true)}>Register</button>
     </div>
   )};

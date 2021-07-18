@@ -57,7 +57,7 @@ function Dashboard (props) {
     )
   return (
     <>
-      <Header display={display} hide={() => setShowRecords(false)} save={saveRecords} />
+      <Header display={display} hide={() => setShowRecords(false)} save={saveRecords} logout={props.logout} />
       <div id='dashboard-container'>
         <h2>{`Welcome ${props.name}`}</h2>
         <DashboardForm/>

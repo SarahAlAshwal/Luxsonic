@@ -9,6 +9,7 @@ function Header (props) {
         <button className='header-button' onClick={props.display}>Display Records</button>
         <button className='header-button' onClick={props.hide}>Hide Records</button>
         <button className='header-button' onClick={props.save}>Save Records</button>
+        <button className='header-button' onClick={props.logout}>logout</button>
       </div>
     </div>
   )};
