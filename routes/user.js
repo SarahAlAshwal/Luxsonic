@@ -7,7 +7,6 @@ const { response } = require("express");
 
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
-  console.log(req.body);
   try {
     const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
 

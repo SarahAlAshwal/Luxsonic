@@ -14,10 +14,7 @@ function App() {
     axios.get('http://localhost:5000/user/', {
       headers: { jwt_token: localStorage.token }
     })
-    .then(response => {
-      console.log('user', response.data);
-      setUser(response.data.username);
-    })
+    .then(response => setUser(response.data.username))
   }
 
   function handleLogin (email, password) {

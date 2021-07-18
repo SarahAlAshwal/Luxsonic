@@ -14,9 +14,8 @@ function Dashboard (props) {
       headers: { jwt_token: localStorage.token }
     })
     .then( response => {
-      console.log(response);
-    setRecords(response.data);
-    setShowRecords(true);
+      setRecords(response.data);
+      setShowRecords(true);
     })
     .catch(error => console.log(error))
   };
