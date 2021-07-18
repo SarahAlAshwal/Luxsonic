@@ -17,7 +17,6 @@ router.post('/', authorize, async(req, res) => {
   });
 
   router.get('/', authorize, async(req, res) => {
-    console.log(req.user.id);
     pool.query(`SELECT * FROM forms WHERE user_id = $1;`, [req.user.id])
     .then (response => res.send(response.rows))
     .catch(error => console.log(error))

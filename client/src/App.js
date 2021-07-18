@@ -10,6 +10,16 @@ function App() {
   const [user, setUser] = useState('');
   const [auth, setAuth] = useState(false);
 
+  function getUsername() {
+    axios.get('http://localhost:5000/user/', {
+      headers: { jwt_token: localStorage.token }
+    })
+    .then(response => {
+      console.log('user', response.data);
+      setUser(response.data.username);
+    })
+  }
+
   function handleLogin (email, password) {
     axios.post('http://localhost:5000/user/login', {
       email: email,
@@ -17,7 +27,7 @@ function App() {
     })
     .then((response) => {
       response.data ? setShow(true) : setError('Incorrect email or password ');
-      //setUser(response.data.username);
+      getUsername();
       if(response.data.jwtToken) {
         localStorage.setItem('token', response.data.jwtToken);
         setAuth(true);
@@ -33,8 +43,8 @@ function App() {
       password: password
     })
     .then((response) => {
+      getUsername();
       setShow(true);
-      setUser(response.data.name);
       if(response.data.jwtToken) {
         localStorage.setItem('token', response.data.jwtToken);
         setAuth(true);
